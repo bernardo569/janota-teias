@@ -49,7 +49,14 @@ header:hover { box-shadow:0 8px 24px -22px #173b29; }
 @keyframes menu-in { from { opacity:0; transform:translateY(-8px) scaleY(.96); } to { opacity:1; transform:translateY(0) scaleY(1); } }
 @keyframes menu-item-in { from { opacity:0; transform:translateX(-8px); } to { opacity:1; transform:translateX(0); } }
 @media (max-width:767px) { header .container { min-height:76px; } }
-.hero-background { position:relative; isolation:isolate; background-image:linear-gradient(90deg,rgba(248,247,241,.98) 0%,rgba(248,247,241,.92) 37%,rgba(248,247,241,.35) 66%,rgba(248,247,241,.08) 100%),url('/manus-storage/janota-hero_e8b6bf13.jpg'); background-position:center;background-size:cover; }
+.hero-background { position:relative; isolation:isolate; background-image:linear-gradient(90deg,rgba(248,247,241,.98) 0%,rgba(248,247,241,.92) 37%,rgba(248,247,241,.35) 66%,rgba(248,247,241,.08) 100%),url('/manus-storage/janota-hero_b3e9dee1.webp'); background-position:center;background-size:cover; }
 .hero-background::after { content:""; position:absolute; inset:0; z-index:-1; background:linear-gradient(180deg,rgba(248,247,241,.12),rgba(248,247,241,.28)); pointer-events:none; }
 .hero-background .max-w-xl { max-width:610px; }
-@media (max-width:767px) { .hero-background { background-position:62% center; background-image:linear-gradient(90deg,rgba(248,247,241,.97) 0%,rgba(248,247,241,.86) 64%,rgba(248,247,241,.36) 100%),url('/manus-storage/janota-hero_e8b6bf13.jpg'); } .hero-background .container { min-height:650px; } }
+@media (max-width:767px) { .hero-background { background-position:62% center; background-image:linear-gradient(90deg,rgba(248,247,241,.97) 0%,rgba(248,247,241,.86) 64%,rgba(248,247,241,.36) 100%),url('/manus-storage/janota-hero_b3e9dee1.webp'); } .hero-background .container { min-height:650px; } }
+.social-icon { display:flex; width:34px; height:34px; align-items:center; justify-content:center; border:1px solid #c8dcc8; border-radius:50%; color:#24543c; transition:transform .22s ease, background .22s ease, color .22s ease; }
+.social-icon:hover { transform:translateY(-4px) rotate(-6deg); background:#194b34; color:#fff; }
+.hero-background .eyebrow,.hero-background h1,.hero-background p,.hero-background .flex.flex-wrap,.hero-background .mt-12 { animation:hero-reveal .7s cubic-bezier(.23,1,.32,1) both; }
+.hero-background h1 { animation-delay:.08s; }.hero-background p { animation-delay:.16s; }.hero-background .flex.flex-wrap { animation-delay:.24s; }.hero-background .mt-12 { animation-delay:.32s; }
+.product-card:hover { transform:translateY(-6px); transition:transform .25s cubic-bezier(.23,1,.32,1); }
+@keyframes hero-reveal { from { opacity:0; transform:translateY(18px); } to { opacity:1; transform:translateY(0); } }
+@media (prefers-reduced-motion:reduce) { .hero-background .eyebrow,.hero-background h1,.hero-background p,.hero-background .flex.flex-wrap,.hero-background .mt-12 { animation:none; } }
