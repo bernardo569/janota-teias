@@ -1,25 +1,46 @@
-import { Button } from "@/components/ui/button";
-import { Loader2 } from "lucide-react";
-import { Streamdown } from 'streamdown';
+import { useMemo, useState } from "react";
+import { ArrowRight, Check, Clock3, Heart, Leaf, MapPin, Menu, MessageCircle, Phone, ShieldCheck, Sparkles, X } from "lucide-react";
 
-/**
- * All content in this page are only for example, replace with your own feature implementation
- * When building pages, remember your instructions in Frontend Best Practices, Design Guide and Common Pitfalls
- */
+const WHATSAPP = "244943984724";
+const phoneLink = "tel:+244943984724";
+
+const products = [
+  { name: "Forever Aloe Vera Gel", category: "Nutrição", note: "A base da rotina de bem-estar", image: "/manus-storage/janota-hero_e8b6bf13.jpg", color: "sage" },
+  { name: "Forever Bright Toothgel", category: "Cuidados pessoais", note: "Sorriso fresco com aloe vera", image: "/manus-storage/janota-toothgel_f1664eb6.jpg", color: "cream" },
+  { name: "Aloe Bits N’ Peaches", category: "Nutrição", note: "Sabor suave de pêssego", image: "/manus-storage/janota-drinks_c38faf20.jpg", color: "peach" },
+  { name: "Fields of Greens + Garlic-Thyme", category: "Suplementos", note: "Dupla para a sua rotina", image: "/manus-storage/janota-wellness_772318a4.jpg", color: "olive" },
+];
+
+function scrollToId(id: string) { document.getElementById(id)?.scrollIntoView({ behavior: "smooth" }); }
+
 export default function Home() {
-  // If theme is switchable in App.tsx, we can implement theme toggling like this:
-  // const { theme, toggleTheme } = useTheme();
+  const [active, setActive] = useState("Todos");
+  const [menuOpen, setMenuOpen] = useState(false);
+  const filters = ["Todos", "Nutrição", "Cuidados pessoais", "Suplementos"];
+  const shown = useMemo(() => active === "Todos" ? products : products.filter(p => p.category === active), [active]);
+  const whatsapp = (message: string) => window.open(`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(message)}`, "_blank");
 
-  return (
-    <div className="min-h-screen flex flex-col">
-      <main>
-        {/* Example: lucide-react for icons */}
-        <Loader2 className="animate-spin" />
-        Example Page
-        {/* Example: Streamdown for markdown rendering */}
-        <Streamdown>Any **markdown** content</Streamdown>
-        <Button variant="default">Example Button</Button>
-      </main>
-    </div>
-  );
+  return <div className="min-h-screen bg-[#f8f7f1] text-[#183b2b] selection:bg-[#c9e6b7]">
+    <div className="topline"><div className="container flex items-center justify-between gap-4 text-[11px] uppercase tracking-[0.18em]"><span>Luanda · Angola</span><span className="hidden sm:inline">Atendimento: segunda a sábado · 09h às 15h</span><a href={phoneLink} className="font-semibold">+244 943 984 724</a></div></div>
+    <header className="sticky top-0 z-30 border-b border-[#dce7d8]/80 bg-[#f8f7f1]/90 backdrop-blur-xl"><div className="container flex h-[76px] items-center justify-between">
+      <a href="#inicio" className="flex items-center gap-3"><span className="brand-mark"><Leaf size={20} strokeWidth={2.2}/></span><span><strong className="block font-display text-[18px] leading-none tracking-[-0.03em]">JANOTA TEIAS</strong><small className="mt-1 block text-[9px] font-semibold uppercase tracking-[0.21em] text-[#6e8175]">Comércio & Serviços, Lda</small></span></a>
+      <nav className="hidden items-center gap-8 text-sm font-medium md:flex"><button onClick={() => scrollToId("produtos")}>Produtos</button><button onClick={() => scrollToId("sobre")}>A nossa essência</button><button onClick={() => scrollToId("contacto")}>Contacto</button></nav>
+      <button className="hidden rounded-full bg-[#194b34] px-5 py-3 text-xs font-bold uppercase tracking-[0.15em] text-white transition hover:-translate-y-0.5 hover:bg-[#245d40] sm:block" onClick={() => whatsapp("Olá, gostaria de saber mais sobre os produtos da JANOTA TEIAS.")}>Falar connosco <ArrowRight className="ml-2 inline" size={14}/></button>
+      <button className="md:hidden" aria-label="Abrir menu" onClick={() => setMenuOpen(!menuOpen)}>{menuOpen ? <X/> : <Menu/>}</button>
+    </div>{menuOpen && <div className="container border-t border-[#dce7d8] py-4 md:hidden"><div className="flex flex-col gap-4 text-sm"><button className="text-left" onClick={() => {scrollToId("produtos"); setMenuOpen(false)}}>Produtos</button><button className="text-left" onClick={() => {scrollToId("sobre"); setMenuOpen(false)}}>A nossa essência</button><button className="text-left" onClick={() => {scrollToId("contacto"); setMenuOpen(false)}}>Contacto</button></div></div>}</header>
+
+    <main id="inicio">
+      <section className="hero-shell"><div className="container grid min-h-[650px] items-center gap-12 py-16 lg:grid-cols-[0.85fr_1.15fr] lg:py-20"><div className="relative z-10 max-w-xl"><div className="eyebrow"><Sparkles size={14}/> Bem-estar que começa na natureza</div><h1 className="mt-6 font-display text-[clamp(3.2rem,7vw,6.8rem)] font-medium leading-[0.88] tracking-[-0.065em]">Viva o seu <em className="text-[#d97838]">melhor</em> todos os dias.</h1><p className="mt-7 max-w-md text-[17px] leading-8 text-[#587064]">Produtos de aloe vera e nutrição para cuidar de si com mais intenção, leveza e confiança.</p><div className="mt-9 flex flex-wrap gap-3"><button className="rounded-full bg-[#d97838] px-6 py-4 text-sm font-bold text-white shadow-[0_12px_30px_-14px_#b45620] transition hover:-translate-y-1 hover:bg-[#c9692c]" onClick={() => scrollToId("produtos")}>Explorar produtos <ArrowRight className="ml-2 inline" size={16}/></button><button className="rounded-full border border-[#aac3ae] bg-white/40 px-6 py-4 text-sm font-bold text-[#24543c] transition hover:bg-white" onClick={() => whatsapp("Olá! Gostaria de receber aconselhamento sobre o produto ideal para mim.")}>Aconselhamento gratuito</button></div><div className="mt-12 flex items-center gap-6 border-t border-[#cfddd0] pt-5 text-xs text-[#65786c]"><span className="flex items-center gap-2"><ShieldCheck size={16} className="text-[#5c9c60]"/> Seleção de confiança</span><span className="flex items-center gap-2"><MapPin size={16} className="text-[#5c9c60]"/> Entrega em Luanda</span></div></div><div className="hero-image-wrap"><div className="hero-blob"/><img src="/manus-storage/janota-hero_e8b6bf13.jpg" alt="Forever Aloe Vera Gel com aloe vera fresca" className="hero-image"/><div className="floating-note"><span className="brand-mark small"><Leaf size={14}/></span><span><strong>Escolha natural</strong><small>Aloe vera · Nutrição · Cuidado</small></span></div></div></div></section>
+
+      <section className="border-y border-[#dce7d8] bg-[#edf4e9] py-5"><div className="container grid gap-4 sm:grid-cols-3"><div className="flex items-center gap-3"><Leaf size={20} className="text-[#5d9c5f]"/><span><strong className="block text-sm">Ingredientes selecionados</strong><small className="text-[#6c7e70]">Cuidado pensado em si</small></span></div><div className="flex items-center gap-3"><Heart size={20} className="text-[#d97838]"/><span><strong className="block text-sm">Aconselhamento próximo</strong><small className="text-[#6c7e70]">Orientação para a sua rotina</small></span></div><div className="flex items-center gap-3"><MessageCircle size={20} className="text-[#5d9c5f]"/><span><strong className="block text-sm">Resposta rápida</strong><small className="text-[#6c7e70]">Fale connosco pelo WhatsApp</small></span></div></div></section>
+
+      <section id="produtos" className="container py-24"><div className="flex flex-col justify-between gap-8 md:flex-row md:items-end"><div><div className="eyebrow">A nossa seleção</div><h2 className="mt-4 font-display text-5xl leading-none tracking-[-0.05em] md:text-6xl">Produtos para <em className="text-[#5e9d62]">florescer.</em></h2></div><div className="flex flex-wrap gap-2">{filters.map(filter => <button key={filter} onClick={() => setActive(filter)} className={`filter-pill ${active === filter ? "active" : ""}`}>{filter}</button>)}</div></div><div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">{shown.map((product, i) => <article key={product.name} className="product-card" style={{animationDelay: `${i * 60}ms`}}><div className={`product-image ${product.color}`}><img src={product.image} alt={product.name}/><span className="product-tag">{product.category}</span><button aria-label={`Saber mais sobre ${product.name}`} className="product-arrow" onClick={() => whatsapp(`Olá! Tenho interesse em ${product.name}. Podem enviar mais informações?`)}><ArrowRight size={18}/></button></div><div className="pt-5"><h3 className="font-display text-[23px] leading-tight tracking-[-0.03em]">{product.name}</h3><p className="mt-2 text-sm text-[#748579]">{product.note}</p><button onClick={() => whatsapp(`Olá! Tenho interesse em ${product.name}. Podem enviar mais informações?`)} className="mt-4 text-xs font-bold uppercase tracking-[0.13em] text-[#d97838]">Saber mais <span className="ml-1">↗</span></button></div></article>)}</div></section>
+
+      <section id="sobre" className="nature-section"><div className="container grid items-center gap-14 py-24 lg:grid-cols-[1fr_0.9fr]"><div className="relative order-2 lg:order-1"><img src="/manus-storage/janota-wellness_772318a4.jpg" alt="Fields of Greens e Garlic-Thyme rodeados de ingredientes naturais" className="rounded-[28px] shadow-[0_28px_70px_-35px_#153c28]"/><div className="stat-card"><strong>100%</strong><span>cuidado<br/>com intenção</span></div></div><div className="order-1 lg:order-2"><div className="eyebrow light">A nossa essência</div><h2 className="mt-5 font-display text-5xl leading-[0.95] tracking-[-0.055em] text-white md:text-6xl">Mais do que produtos. <em className="text-[#e9ae78]">Uma forma de viver.</em></h2><p className="mt-7 text-[17px] leading-8 text-[#c5d8c8]">Na JANOTA TEIAS acreditamos que pequenas escolhas constroem grandes mudanças. Levamos até si uma seleção de produtos Forever para acompanhar uma rotina mais equilibrada, consciente e cheia de vitalidade.</p><ul className="mt-8 space-y-4 text-sm text-[#e0eee1]">{["Atendimento humano e personalizado", "Produtos para nutrição e cuidados pessoais", "Presença local em Luanda, Angola"].map(item => <li key={item} className="flex items-center gap-3"><span className="flex h-6 w-6 items-center justify-center rounded-full bg-[#7db47b] text-[#173b29]"><Check size={14}/></span>{item}</li>)}</ul><button className="mt-9 rounded-full border border-[#7eae83] px-6 py-3 text-sm font-bold text-white transition hover:bg-white hover:text-[#183b2b]" onClick={() => whatsapp("Olá! Gostaria de conhecer melhor a JANOTA TEIAS.")}>Conheça a JANOTA TEIAS <ArrowRight className="ml-2 inline" size={15}/></button></div></div></section>
+
+      <section id="contacto" className="container py-24"><div className="contact-card"><div><div className="eyebrow">Estamos por perto</div><h2 className="mt-4 max-w-xl font-display text-5xl leading-[0.95] tracking-[-0.055em] md:text-6xl">Comece hoje a cuidar melhor de si.</h2><p className="mt-5 max-w-md leading-7 text-[#63766a]">Fale connosco para conhecer os produtos, esclarecer dúvidas ou receber uma recomendação personalizada.</p></div><div className="contact-details"><a href={phoneLink} className="contact-line"><Phone size={20}/><span><small>Telefone</small><strong>943 984 724 · 953 322 103</strong></span></a><div className="contact-line"><Clock3 size={20}/><span><small>Horário de atendimento</small><strong>09h00 — 15h00</strong></span></div><div className="contact-line"><MapPin size={20}/><span><small>Localização</small><strong>Luanda, Angola</strong></span></div><button className="mt-3 w-full rounded-full bg-[#194b34] px-5 py-4 text-sm font-bold text-white transition hover:bg-[#286342]" onClick={() => whatsapp("Olá, JANOTA TEIAS! Gostaria de falar com a equipa.")}><MessageCircle className="mr-2 inline" size={17}/> Conversar no WhatsApp</button></div></div></section>
+    </main>
+    <footer className="border-t border-[#dce7d8] bg-[#edf4e9] py-8"><div className="container flex flex-col justify-between gap-4 text-xs text-[#708276] sm:flex-row"><span>© {new Date().getFullYear()} JANOTA TEIAS - COMÉRCIO E SERVIÇOS LDA</span><span>Luanda, Angola · Feito para viver melhor</span></div></footer>
+    <button className="whatsapp-float" aria-label="Falar no WhatsApp" onClick={() => whatsapp("Olá, JANOTA TEIAS! Gostaria de saber mais sobre os produtos.")}><MessageCircle size={25}/></button>
+  </div>;
 }
