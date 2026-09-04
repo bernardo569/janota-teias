@@ -65,3 +65,16 @@ button:not(.filter-pill), .contact-line + button { border-radius:999px; letter-s
 button:not(.filter-pill):hover { box-shadow:0 16px 30px -20px rgba(25,75,52,.85); }
 button:not(.filter-pill):active { transform:scale(.97); }
 .product-arrow { display:none; }
+.services-section { background:#f1efe5; border-top:1px solid #e2e4d7; }
+.service-card { position:relative; min-height:470px; overflow:hidden; border-radius:28px; background:#1b4631; box-shadow:0 22px 55px -32px rgba(24,59,43,.65); }
+.service-card img { width:100%; height:100%; min-height:470px; object-fit:cover; transition:transform .6s cubic-bezier(.23,1,.32,1); }
+.service-card:hover img { transform:scale(1.06); }
+.service-card::after { content:""; position:absolute; inset:0; background:linear-gradient(180deg,rgba(10,31,21,.03) 20%,rgba(10,31,21,.88) 100%); }
+.service-overlay { position:absolute; z-index:2; right:0; bottom:0; left:0; padding:28px; color:#fff; }
+.service-overlay small { display:block; margin-top:16px; color:#dce9d3; font-size:9px; font-weight:700; letter-spacing:.12em; }
+.service-overlay h3 { margin-top:8px; font-family:'Playfair Display',serif; font-size:34px; line-height:.95; letter-spacing:-.045em; }
+.service-overlay p { max-width:255px; margin-top:13px; color:#d5e3d3; font-size:13px; line-height:1.6; }
+.service-overlay button { margin-top:17px; border:1px solid rgba(255,255,255,.5); background:rgba(255,255,255,.08); padding:10px 17px; color:white; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.12em; }
+.service-overlay button:hover { background:#fff; color:#194b34; }
+.service-icon { display:flex; width:44px; height:44px; align-items:center; justify-content:center; border-radius:50%; background:#d97838; color:#fff; }
+@media (max-width:767px) { .service-card,.service-card img { min-height:410px; } .service-overlay { padding:22px; } }
