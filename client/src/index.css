@@ -60,3 +60,8 @@ header:hover { box-shadow:0 8px 24px -22px #173b29; }
 .product-card:hover { transform:translateY(-6px); transition:transform .25s cubic-bezier(.23,1,.32,1); }
 @keyframes hero-reveal { from { opacity:0; transform:translateY(18px); } to { opacity:1; transform:translateY(0); } }
 @media (prefers-reduced-motion:reduce) { .hero-background .eyebrow,.hero-background h1,.hero-background p,.hero-background .flex.flex-wrap,.hero-background .mt-12 { animation:none; } }
+/* Acabamento premium dos botões, sem setas decorativas */
+button:not(.filter-pill), .contact-line + button { border-radius:999px; letter-spacing:.01em; box-shadow:0 10px 24px -18px rgba(25,75,52,.7); transition:transform .22s cubic-bezier(.23,1,.32,1), box-shadow .22s ease, background-color .22s ease; }
+button:not(.filter-pill):hover { box-shadow:0 16px 30px -20px rgba(25,75,52,.85); }
+button:not(.filter-pill):active { transform:scale(.97); }
+.product-arrow { display:none; }
