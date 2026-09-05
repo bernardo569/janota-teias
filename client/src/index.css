@@ -81,3 +81,9 @@ button:not(.filter-pill):active { transform:scale(.97); }
 
 .service-card h3 { font-size: clamp(2rem, 3vw, 2.7rem); }
 @media (min-width: 1024px) { .services-section .grid { grid-template-columns: repeat(4, minmax(0, 1fr)); } .service-card { min-height: 500px; } .service-card img { min-height:500px; } }
+
+/* Identidade visual WhatsApp */
+.whatsapp-float { background:#25D366; color:#fff; box-shadow:0 14px 30px -12px rgba(18,140,126,.72); }
+.whatsapp-float:hover { background:#128C7E; color:#fff; }
+.contact-details button { background:#25D366 !important; box-shadow:0 14px 28px -14px rgba(18,140,126,.7); }
+.contact-details button:hover { background:#128C7E !important; }
