@@ -87,3 +87,6 @@ button:not(.filter-pill):active { transform:scale(.97); }
 .whatsapp-float:hover { background:#128C7E; color:#fff; }
 .contact-details button { background:#25D366 !important; box-shadow:0 14px 28px -14px rgba(18,140,126,.7); }
 .contact-details button:hover { background:#128C7E !important; }
+
+.whatsapp-logo-inline { display:inline-block; width:18px; height:18px; vertical-align:-4px; margin-right:8px; }
+.whatsapp-logo-float { width:27px; height:27px; object-fit:contain; }
