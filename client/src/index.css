@@ -149,3 +149,9 @@ header > .container > button.sm\:block:hover { background:#185f9f !important; co
 .brand-logo { width:180px; height:50px; border-radius:0; object-fit:contain; object-position:left center; border:0; box-shadow:none; }
 @media (max-width:640px) { .brand-logo { width:148px; height:44px; } }
 .brand-needle { display:inline-flex; width:34px; align-items:center; justify-content:center; color:#2177c7; font-family:'Playfair Display',serif; font-size:48px; font-style:italic; font-weight:600; line-height:1; text-shadow:1px 1px 0 #b7cde0; }
+/* Tipografia mais confortável para leitura */
+.font-display, h1.font-display, h2.font-display, h3.font-display { font-family:'DM Sans', ui-sans-serif, system-ui, sans-serif !important; font-weight:700; letter-spacing:-0.045em; }
+.font-display em { font-family:'DM Sans', ui-sans-serif, system-ui, sans-serif !important; font-style:normal; font-weight:800; }
+.brand-needle { font-family:'DM Sans', ui-sans-serif, system-ui, sans-serif; font-style:italic; font-weight:800; }
+.hero-background h1 { max-width:680px !important; font-size:clamp(3.35rem,6.3vw,5.35rem) !important; line-height:.94 !important; letter-spacing:-.06em !important; }
+@media (max-width:767px) { .hero-background h1 { font-size:clamp(2.7rem,12vw,4rem) !important; line-height:.96 !important; } }
