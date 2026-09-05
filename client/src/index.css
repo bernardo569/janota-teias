@@ -90,3 +90,58 @@ button:not(.filter-pill):active { transform:scale(.97); }
 
 .whatsapp-logo-inline { display:inline-block; width:18px; height:18px; vertical-align:-4px; margin-right:8px; }
 .whatsapp-logo-float { width:27px; height:27px; object-fit:contain; }
+
+/* Identidade JANOTA TEIAS: azul-marinho e azul elétrico */
+body { background:#071525; color:#edf4ff; }
+.topline { background:#050d17; color:#b8c9df; }
+header { background:#09192b !important; border-color:#203a55 !important; color:#edf4ff; }
+header .brand-mark { display:none; }
+header a, header button, .site-nav button { color:#dce8f5; }
+header .site-nav button:hover { color:#5bb7ff; }
+header .site-nav button::after { background:#168cff; }
+.brand-logo { width:48px; height:48px; border-radius:50%; object-fit:cover; object-position:center; border:1px solid #2e81d5; box-shadow:0 0 0 3px #0b2139, 0 8px 24px -12px #168cff; }
+.hero-background { background-image:linear-gradient(90deg,rgba(4,14,27,.96) 0%,rgba(4,14,27,.88) 38%,rgba(4,14,27,.38) 70%,rgba(4,14,27,.16) 100%),url('/manus-storage/grupo-hero_543673c7.webp'); }
+.hero-background::after { background:linear-gradient(180deg,rgba(4,14,27,.10),rgba(4,14,27,.38)); }
+.hero-background .eyebrow { color:#5bb7ff; }
+.hero-background h1 { color:#f4f8ff; }
+.hero-background p, .hero-background .mt-12 { color:#c4d4e7; }
+.hero-background .border-t { border-color:#31506d; }
+.services-section { background:#0a1b2d; border-color:#203a55; }
+.services-section h2 { color:#f4f8ff; }
+.services-section p { color:#b5c7db; }
+.nature-section { background:#071525; background-image:radial-gradient(circle at 10% 20%,#0c3156 0,transparent 30%),radial-gradient(circle at 90% 90%,#09213b 0,transparent 32%); }
+.contact-card { background:#0d2137; background-image:linear-gradient(120deg,#0d2137,#122c48); color:#f4f8ff; }
+.contact-card p, .contact-line small { color:#afc2d7; }
+.contact-line, .contact-line strong { color:#edf4ff; }
+footer { background:#050d17 !important; border-color:#203a55 !important; color:#9fb5cc !important; }
+.social-icon { border-color:#2a527b; color:#9fd5ff; }
+.social-icon:hover { background:#0d65b7; color:#fff; }
+@media (max-width:767px) { .hero-background { background-image:linear-gradient(90deg,rgba(4,14,27,.96) 0%,rgba(4,14,27,.88) 64%,rgba(4,14,27,.46) 100%),url('/manus-storage/grupo-hero_543673c7.webp'); } }
+/* Ajuste suave da identidade azul */
+body { background:#f3f7fb; color:#17314b; }
+.topline { background:#102c46; color:#c9d9e8; }
+header { background:#f8fbfe !important; color:#17314b; box-shadow:0 8px 28px -26px #183d5e; }
+header a, header button, .site-nav button { color:#29455e; }
+header .site-nav button:hover { color:#1d73ba; }
+.hero-background { background-image:linear-gradient(90deg,rgba(243,247,251,.98) 0%,rgba(243,247,251,.92) 36%,rgba(243,247,251,.50) 68%,rgba(243,247,251,.16) 100%),url('/manus-storage/grupo-hero_543673c7.webp'); }
+.hero-background::after { background:linear-gradient(180deg,rgba(243,247,251,.08),rgba(243,247,251,.24)); }
+.hero-background .eyebrow { color:#2177c7; }
+.hero-background h1 { color:#17314b; }
+.hero-background p, .hero-background .mt-12 { color:#5f7488; }
+.hero-background .border-t { border-color:#c5d6e5; }
+.hero-background button:first-of-type { background:#2177c7 !important; box-shadow:0 12px 30px -14px #2177c7; }
+.services-section { background:#edf4fa; border-color:#d7e4ef; }
+.services-section h2 { color:#17314b; }
+.services-section p { color:#61778b; }
+.service-icon { background:#2177c7; }
+.nature-section { background:#153c5c; background-image:radial-gradient(circle at 10% 20%,#2d628d 0,transparent 30%),radial-gradient(circle at 90% 90%,#1d4e73 0,transparent 32%); }
+.contact-card { background:#eaf3fa; background-image:linear-gradient(120deg,#eaf3fa,#f5f8fb); color:#17314b; }
+.contact-card h2 { color:#17314b; }
+.contact-card p, .contact-line small { color:#61778b; }
+.contact-line, .contact-line strong { color:#17314b; }
+footer { background:#e5eef6 !important; border-color:#cfdeea !important; color:#6a8094 !important; }
+.social-icon { border-color:#b9cee1; color:#2177c7; }
+.social-icon:hover { background:#2177c7; color:#fff; }
+@media (max-width:767px) { .hero-background { background-image:linear-gradient(90deg,rgba(243,247,251,.98) 0%,rgba(243,247,251,.90) 62%,rgba(243,247,251,.38) 100%),url('/manus-storage/grupo-hero_543673c7.webp'); } }
+header > .container > button.sm\:block { background:#2177c7 !important; color:#fff !important; }
+header > .container > button.sm\:block:hover { background:#185f9f !important; color:#fff !important; }
