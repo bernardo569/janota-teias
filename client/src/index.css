@@ -182,3 +182,6 @@ header > .container > button.sm\:block:hover { background:#185f9f !important; co
 /* Melhor leitura do logo original no cabeçalho */
 .brand-logo-final { width:180px; height:100px; margin-top:-12px; margin-bottom:-12px; }
 @media (max-width:640px) { .brand-logo-final { width:145px; height:82px; margin-top:-8px; margin-bottom:-8px; } }
+/* Ajuste de enquadramento: logo original inteiro, sem corte no cabeçalho */
+.brand-logo-final { width:125px; height:58px; margin-top:0; margin-bottom:0; }
+@media (max-width:640px) { .brand-logo-final { width:106px; height:52px; margin-top:0; margin-bottom:0; } }
