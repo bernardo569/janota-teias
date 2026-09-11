@@ -1,15 +1,9 @@
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import { Check, Clock3, Heart, Leaf, MessageCircle, MapPin, Menu, Phone, ShieldCheck, X, Facebook, Instagram, Linkedin, Plane, Megaphone, Activity } from "lucide-react";
 
 const WHATSAPP = "244943984724";
 const phoneLink = "tel:+244943984724";
 
-const products = [
-  { name: "Forever Aloe Vera Gel", category: "Nutrição", note: "A base da rotina de bem-estar", image: "/manus-storage/janota-hero_b3e9dee1.webp", color: "sage" },
-  { name: "Forever Bright Toothgel", category: "Cuidados pessoais", note: "Sorriso fresco com aloe vera", image: "/manus-storage/janota-toothgel_7f7d238f.webp", color: "cream" },
-  { name: "Aloe Bits N’ Peaches", category: "Nutrição", note: "Sabor suave de pêssego", image: "/manus-storage/janota-drinks_2ea8db08.webp", color: "peach" },
-  { name: "Fields of Greens + Garlic-Thyme", category: "Suplementos", note: "Dupla para a sua rotina", image: "/manus-storage/janota-wellness_fcb00f50.webp", color: "olive" },
-];
 
 function scrollToId(id: string) { document.getElementById(id)?.scrollIntoView({ behavior: "smooth" }); }
 
@@ -21,17 +15,14 @@ const serviceDetails = {
 };
 
 export default function Home() {
-  const [active, setActive] = useState("Todos");
   const [menuOpen, setMenuOpen] = useState(false);
   const [selectedService, setSelectedService] = useState<keyof typeof serviceDetails | null>(null);
-  const filters = ["Todos", "Nutrição", "Cuidados pessoais", "Suplementos"];
-  const shown = useMemo(() => active === "Todos" ? products : products.filter(p => p.category === active), [active]);
   const whatsapp = (message: string) => window.open(`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(message)}`, "_blank");
 
   return <div className="min-h-screen bg-[#f8f7f1] text-[#183b2b] selection:bg-[#c9e6b7]">
     <div className="topline"><div className="container flex items-center justify-between gap-4 text-[11px] uppercase tracking-[0.18em]"><span>Luanda · Angola</span><span className="hidden sm:inline">Atendimento: segunda a sábado · 09h às 15h</span><a href={phoneLink} className="font-semibold">+244 943 984 724</a></div></div>
     <header className="sticky top-0 z-30 border-b border-[#dce7d8]/80 bg-[#f8f7f1]/90 backdrop-blur-xl"><div className="container flex h-[76px] items-center justify-between">
-      <a href="#inicio" className="flex items-center gap-3"><img className="brand-logo-final" src="/manus-storage/janota-original-clean_d9758c03.png" alt="JANOTA TEIAS — Comércio e Serviços"/></a>
+      <a href="#inicio" className="flex items-center gap-3"><img className="brand-logo-final" src="/manus-storage/janota-original-clean_e48e63d0.webp" alt="JANOTA TEIAS — Comércio e Serviços"/></a>
       <nav className="site-nav hidden items-center gap-8 text-sm font-medium md:flex"><button onClick={() => scrollToId("servicos")}>Serviços</button><button onClick={() => scrollToId("sobre")}>A nossa essência</button><button onClick={() => scrollToId("contacto")}>Contacto</button></nav>
       <button className="hidden rounded-full bg-[#194b34] px-5 py-3 text-xs font-bold uppercase tracking-[0.15em] text-white transition hover:-translate-y-0.5 hover:bg-[#245d40] sm:block" onClick={() => whatsapp("Olá, gostaria de saber mais sobre os produtos da JANOTA TEIAS.")}>Falar connosco </button>
       <button className="md:hidden" aria-expanded={menuOpen} aria-label={menuOpen ? "Fechar menu" : "Abrir menu"} onClick={() => setMenuOpen(!menuOpen)}>{menuOpen ? <X/> : <Menu/>}</button>
