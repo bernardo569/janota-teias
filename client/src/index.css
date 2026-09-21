@@ -49,10 +49,10 @@ header:hover { box-shadow:0 8px 24px -22px #173b29; }
 @keyframes menu-in { from { opacity:0; transform:translateY(-8px) scaleY(.96); } to { opacity:1; transform:translateY(0) scaleY(1); } }
 @keyframes menu-item-in { from { opacity:0; transform:translateX(-8px); } to { opacity:1; transform:translateX(0); } }
 @media (max-width:767px) { header .container { min-height:76px; } }
-.hero-background { position:relative; isolation:isolate; background-image:linear-gradient(90deg,rgba(248,247,241,.98) 0%,rgba(248,247,241,.92) 37%,rgba(248,247,241,.35) 66%,rgba(248,247,241,.08) 100%),url('/manus-storage/grupo-hero_543673c7.webp'); background-position:center;background-size:cover; }
+.hero-background { position:relative; isolation:isolate; background-image:linear-gradient(90deg,rgba(248,247,241,.98) 0%,rgba(248,247,241,.92) 37%,rgba(248,247,241,.35) 66%,rgba(248,247,241,.08) 100%); background-position:center;background-size:cover; }
 .hero-background::after { content:""; position:absolute; inset:0; z-index:-1; background:linear-gradient(180deg,rgba(248,247,241,.12),rgba(248,247,241,.28)); pointer-events:none; }
 .hero-background .max-w-xl { max-width:610px; }
-@media (max-width:767px) { .hero-background { background-position:62% center; background-image:linear-gradient(90deg,rgba(248,247,241,.97) 0%,rgba(248,247,241,.86) 64%,rgba(248,247,241,.36) 100%),url('/manus-storage/grupo-hero_543673c7.webp'); } .hero-background .container { min-height:650px; } }
+@media (max-width:767px) { .hero-background { background-position:62% center; background-image:linear-gradient(90deg,rgba(248,247,241,.97) 0%,rgba(248,247,241,.86) 64%,rgba(248,247,241,.36) 100%); } .hero-background .container { min-height:650px; } }
 .social-icon { display:flex; width:34px; height:34px; align-items:center; justify-content:center; border:1px solid #c8dcc8; border-radius:50%; color:#24543c; transition:transform .22s ease, background .22s ease, color .22s ease; }
 .social-icon:hover { transform:translateY(-4px) rotate(-6deg); background:#194b34; color:#fff; }
 .hero-background .eyebrow,.hero-background h1,.hero-background p,.hero-background .flex.flex-wrap,.hero-background .mt-12 { animation:hero-reveal .7s cubic-bezier(.23,1,.32,1) both; }
@@ -100,7 +100,7 @@ header a, header button, .site-nav button { color:#dce8f5; }
 header .site-nav button:hover { color:#5bb7ff; }
 header .site-nav button::after { background:#168cff; }
 .brand-logo { width:48px; height:48px; border-radius:50%; object-fit:cover; object-position:center; border:1px solid #2e81d5; box-shadow:0 0 0 3px #0b2139, 0 8px 24px -12px #168cff; }
-.hero-background { background-image:linear-gradient(90deg,rgba(4,14,27,.96) 0%,rgba(4,14,27,.88) 38%,rgba(4,14,27,.38) 70%,rgba(4,14,27,.16) 100%),url('/manus-storage/grupo-hero_543673c7.webp'); }
+.hero-background { background-image:linear-gradient(90deg,rgba(4,14,27,.96) 0%,rgba(4,14,27,.88) 38%,rgba(4,14,27,.38) 70%,rgba(4,14,27,.16) 100%); }
 .hero-background::after { background:linear-gradient(180deg,rgba(4,14,27,.10),rgba(4,14,27,.38)); }
 .hero-background .eyebrow { color:#5bb7ff; }
 .hero-background h1 { color:#f4f8ff; }
@@ -116,14 +116,14 @@ header .site-nav button::after { background:#168cff; }
 footer { background:#050d17 !important; border-color:#203a55 !important; color:#9fb5cc !important; }
 .social-icon { border-color:#2a527b; color:#9fd5ff; }
 .social-icon:hover { background:#0d65b7; color:#fff; }
-@media (max-width:767px) { .hero-background { background-image:linear-gradient(90deg,rgba(4,14,27,.96) 0%,rgba(4,14,27,.88) 64%,rgba(4,14,27,.46) 100%),url('/manus-storage/grupo-hero_543673c7.webp'); } }
+@media (max-width:767px) { .hero-background { background-image:linear-gradient(90deg,rgba(4,14,27,.96) 0%,rgba(4,14,27,.88) 64%,rgba(4,14,27,.46) 100%); } }
 /* Ajuste suave da identidade azul */
 body { background:#f3f7fb; color:#17314b; }
 .topline { background:#102c46; color:#c9d9e8; }
 header { background:#f8fbfe !important; color:#17314b; box-shadow:0 8px 28px -26px #183d5e; }
 header a, header button, .site-nav button { color:#29455e; }
 header .site-nav button:hover { color:#1d73ba; }
-.hero-background { background-image:linear-gradient(90deg,rgba(243,247,251,.98) 0%,rgba(243,247,251,.92) 36%,rgba(243,247,251,.50) 68%,rgba(243,247,251,.16) 100%),url('/manus-storage/grupo-hero_543673c7.webp'); }
+.hero-background { background-image:linear-gradient(90deg,rgba(243,247,251,.98) 0%,rgba(243,247,251,.92) 36%,rgba(243,247,251,.50) 68%,rgba(243,247,251,.16) 100%); }
 .hero-background::after { background:linear-gradient(180deg,rgba(243,247,251,.08),rgba(243,247,251,.24)); }
 .hero-background .eyebrow { color:#2177c7; }
 .hero-background h1 { color:#17314b; }
@@ -142,7 +142,7 @@ header .site-nav button:hover { color:#1d73ba; }
 footer { background:#e5eef6 !important; border-color:#cfdeea !important; color:#6a8094 !important; }
 .social-icon { border-color:#b9cee1; color:#2177c7; }
 .social-icon:hover { background:#2177c7; color:#fff; }
-@media (max-width:767px) { .hero-background { background-image:linear-gradient(90deg,rgba(243,247,251,.98) 0%,rgba(243,247,251,.90) 62%,rgba(243,247,251,.38) 100%),url('/manus-storage/grupo-hero_543673c7.webp'); } }
+@media (max-width:767px) { .hero-background { background-image:linear-gradient(90deg,rgba(243,247,251,.98) 0%,rgba(243,247,251,.90) 62%,rgba(243,247,251,.38) 100%); } }
 header > .container > button.sm\:block { background:#2177c7 !important; color:#fff !important; }
 header > .container > button.sm\:block:hover { background:#185f9f !important; color:#fff !important; }
 /* Wordmark horizontal sem medalha circular */
